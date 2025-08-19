@@ -82,11 +82,16 @@ def maybe_create_client() -> Optional[object]:
 
 def main() -> None:
     load_dotenv()
-    _ = parse_args()
+    args = parse_args()
     ensure_dirs()
 
     # Placeholder: structure only, no network calls yet.
     _client = maybe_create_client()
+
+    # Honor env for feed/adjustment even before implementation
+    data_feed = os.getenv("APCA_DATA_FEED", "sip")
+    adjustment = os.getenv("APCA_ADJUSTMENT", "all")
+    _ = (args, data_feed, adjustment)
 
     write_empty_outputs()
 

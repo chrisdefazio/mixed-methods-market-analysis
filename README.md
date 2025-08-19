@@ -22,6 +22,8 @@ Set the following environment variables (e.g., in `.env`):
 APCA_API_KEY_ID=YOUR_KEY
 APCA_API_SECRET_KEY=YOUR_SECRET
 APCA_API_BASE_URL=https://data.alpaca.markets
+APCA_DATA_FEED=sip
+APCA_ADJUSTMENT=all
 ```
 
 The project will use `alpaca-py` to retrieve market OHLCV, sectors, and news.
