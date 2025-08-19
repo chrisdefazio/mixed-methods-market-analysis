@@ -1,0 +1,8 @@
+# Per SPEC.MD
+.env
+SPEC.MD
+.venv/
+**/.ipynb_checkpoints/
+data/processed/
+
+

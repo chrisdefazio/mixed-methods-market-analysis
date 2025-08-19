@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: mixed-methods-market-analysis
+message: If you use this project, please cite it as below.
+authors:
+  - family-names: DeFazio
+    given-names: Chris
+date-released: 2025-01-01
+license: MIT
+
+
