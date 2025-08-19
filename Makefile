@@ -19,9 +19,13 @@ fmt:
 precommit:
 	. .venv/bin/activate && pre-commit run --all-files
 
-# Placeholder: will fetch Alpaca if keys present, else synthetic fallback later
 fetch-sample:
-	@echo "Fetch-sample placeholder (data fetching to be implemented later)"
+	@if [ -n "$$APCA_API_KEY_ID" ] && [ -n "$$APCA_API_SECRET_KEY" ]; then \
+		. .venv/bin/activate && python scripts/fetch_prices_alpaca.py -symbols AAPL,MSFT -start 2024-01-02 -end 2024-04-30 -timeframe 1Day -sector-map sector_map.json ; \
+		. .venv/bin/activate && python scripts/fetch_news_alpaca.py -symbols AAPL,MSFT -start 2024-01-02 -end 2024-04-30 -limit 1000 ; \
+	else \
+		. .venv/bin/activate && python scripts/generate_synthetic.py ; \
+	fi
 
 run-all:
 	. .venv/bin/activate && jupyter nbconvert --to html --no-input notebooks/*.ipynb
