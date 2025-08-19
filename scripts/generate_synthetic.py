@@ -19,7 +19,9 @@ def business_days(start: str, periods: int) -> pd.DatetimeIndex:
     return pd.bdate_range(start=start, periods=periods, tz=None)
 
 
-def generate_prices(symbols: List[str], sectors: Dict[str, str], dates: pd.DatetimeIndex) -> pd.DataFrame:
+def generate_prices(
+    symbols: List[str], sectors: Dict[str, str], dates: pd.DatetimeIndex
+) -> pd.DataFrame:
     records: List[dict] = []
     for symbol in symbols:
         start_price = float(np.random.uniform(50.0, 300.0))
@@ -28,7 +30,7 @@ def generate_prices(symbols: List[str], sectors: Dict[str, str], dates: pd.Datet
         prices = [start_price]
         vols = []
         vols_window = 20
-        for i in range(1, len(dates)):
+        for _i in range(1, len(dates)):
             r = float(np.random.normal(daily_mu, daily_sigma))
             prices.append(prices[-1] * (1.0 + r))
         prices = np.array(prices)
@@ -45,7 +47,7 @@ def generate_prices(symbols: List[str], sectors: Dict[str, str], dates: pd.Datet
 
         volumes = (np.random.lognormal(mean=12.0, sigma=0.6, size=len(dates))).astype(int)
 
-        for d, price, vol_est, volu in zip(dates, prices, vols, volumes):
+        for d, price, vol_est, volu in zip(dates, prices, vols, volumes, strict=False):
             records.append(
                 {
                     "date": pd.to_datetime(d).date(),
@@ -85,7 +87,11 @@ def generate_headlines(symbols: List[str], dates: pd.DatetimeIndex) -> pd.DataFr
             # 35% chance of a headline per symbol per day
             if np.random.rand() < 0.35:
                 headline = random.choice(headlines_samples).format(sym=sym)
-                created_dt = datetime.combine(pd.to_datetime(d).date(), time(9, 30), tzinfo=timezone.utc)
+                created_dt = datetime.combine(
+                    pd.to_datetime(d).date(),
+                    time(9, 30),
+                    tzinfo=timezone.utc,
+                )
                 rows.append(
                     {
                         "date": pd.to_datetime(d).date(),
@@ -96,7 +102,9 @@ def generate_headlines(symbols: List[str], dates: pd.DatetimeIndex) -> pd.DataFr
                     }
                 )
 
-    df = pd.DataFrame.from_records(rows, columns=["date", "symbol", "headline", "source", "created_at"])
+    df = pd.DataFrame.from_records(
+        rows, columns=["date", "symbol", "headline", "source", "created_at"]
+    )
     return df
 
 
@@ -131,5 +139,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-

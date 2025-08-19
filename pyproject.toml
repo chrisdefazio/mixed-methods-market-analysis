@@ -9,7 +9,6 @@ license = { text = "MIT" }
 [tool.black]
 line-length = 100
 target-version = ["py310", "py311", "py312"]
-include = "\.(py|ipynb)$"
 
 [tool.isort]
 profile = "black"
@@ -26,5 +25,3 @@ lint.select = [
   "B", # flake8-bugbear
 ]
 lint.ignore = []
-
-

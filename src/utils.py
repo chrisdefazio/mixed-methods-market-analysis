@@ -3,11 +3,10 @@ from __future__ import annotations
 import os
 import random
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Sequence, Union
+from typing import Dict, Iterable, Optional, Sequence, Union
 
 import numpy as np
 import pandas as pd
-
 
 PathLike = Union[str, Path]
 
@@ -178,6 +177,3 @@ def load_headlines(path: PathLike = "data/raw/headlines.csv") -> pd.DataFrame:
         df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
 
     return df
-
-
-

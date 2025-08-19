@@ -18,7 +18,7 @@ except Exception:  # pragma: no cover - keep CLI usable even if API moves
     StockBarsRequest = None  # type: ignore
 
 
-def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable[[Callable[..., object]], Callable[..., object]]:
+def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable:
     """Simple retry decorator with fixed backoff.
 
     Args:
@@ -44,12 +44,12 @@ def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable[[Callabl
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Fetch prices and compute returns (structure only)")
-    parser.add_argument("-symbols", type=str, required=True, help="Comma-separated symbols, e.g., AAPL,MSFT")
+    parser = argparse.ArgumentParser(description="Fetch prices (structure only)")
+    parser.add_argument("-symbols", type=str, required=True, help="CSV symbols e.g. AAPL,MSFT")
     parser.add_argument("-start", type=str, required=True, help="Start date YYYY-MM-DD")
     parser.add_argument("-end", type=str, required=True, help="End date YYYY-MM-DD")
-    parser.add_argument("-timeframe", type=str, default="1Day", help="Bar timeframe, default 1Day")
-    parser.add_argument("-sector-map", type=str, default="", help="Path to JSON mapping symbols->sector")
+    parser.add_argument("-timeframe", type=str, default="1Day", help="Bar timeframe (default 1Day)")
+    parser.add_argument("-sector-map", type=str, default="", help="JSON path symbols->sector")
     return parser.parse_args()
 
 
@@ -93,5 +93,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-

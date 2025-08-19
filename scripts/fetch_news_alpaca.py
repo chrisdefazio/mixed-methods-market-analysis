@@ -18,7 +18,7 @@ except Exception:  # pragma: no cover - keep CLI usable even if API moves
     NewsRequest = None  # type: ignore
 
 
-def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable[[Callable[..., object]], Callable[..., object]]:
+def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable:
     """Simple retry decorator with fixed backoff."""
 
     def decorator(fn: Callable[..., object]) -> Callable[..., object]:
@@ -40,7 +40,7 @@ def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable[[Callabl
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Fetch market news (structure only)")
-    parser.add_argument("-symbols", type=str, required=True, help="Comma-separated symbols, e.g., AAPL,MSFT")
+    parser.add_argument("-symbols", type=str, required=True, help="CSV symbols e.g. AAPL,MSFT")
     parser.add_argument("-start", type=str, required=True, help="Start date YYYY-MM-DD")
     parser.add_argument("-end", type=str, required=True, help="End date YYYY-MM-DD")
     parser.add_argument("-limit", type=int, default=1000, help="Max news items")
@@ -84,5 +84,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-

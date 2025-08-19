@@ -29,5 +29,3 @@ fetch-sample:
 
 run-all:
 	. .venv/bin/activate && jupyter nbconvert --to html --no-input notebooks/*.ipynb
-
-

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Iterable, List, Literal, Optional, Tuple
+from typing import Literal
 
 import numpy as np
 import pandas as pd
@@ -152,6 +151,3 @@ def fit_pca_scaler(features: pd.DataFrame) -> StandardScaler:
     scaler = StandardScaler()
     scaler.fit(features.values)
     return scaler
-
-
-

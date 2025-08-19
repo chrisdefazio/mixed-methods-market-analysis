@@ -23,6 +23,3 @@ def savefig(path: str | Path, fig: Optional[plt.Figure] = None, dpi: int = 150) 
     target.parent.mkdir(parents=True, exist_ok=True)
     figure = fig if fig is not None else plt.gcf()
     figure.savefig(target, dpi=dpi, bbox_inches="tight")
-
-
-
