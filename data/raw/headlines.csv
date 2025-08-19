@@ -1,1 +1,142 @@
 date,symbol,headline,source,created_at
+2024-01-02,MSFT,MSFT misses guidance as costs rise,Reuters,2024-01-02T09:30:00Z
+2024-01-03,AAPL,AAPL faces regulatory scrutiny,Bloomberg,2024-01-03T09:30:00Z
+2024-01-03,MSFT,MSFT announces share buyback,Bloomberg,2024-01-03T09:30:00Z
+2024-01-03,GOOG,GOOG misses guidance as costs rise,Reuters,2024-01-03T09:30:00Z
+2024-01-03,AMZN,AMZN reports record quarterly revenue,Reuters,2024-01-03T09:30:00Z
+2024-01-04,AAPL,AAPL beats expectations amid strong demand,Reuters,2024-01-04T09:30:00Z
+2024-01-04,NVDA,NVDA announces share buyback,Bloomberg,2024-01-04T09:30:00Z
+2024-01-05,AMZN,AMZN beats expectations amid strong demand,Bloomberg,2024-01-05T09:30:00Z
+2024-01-05,NVDA,NVDA reports record quarterly revenue,Bloomberg,2024-01-05T09:30:00Z
+2024-01-08,AAPL,Market remains cautious on AAPL,CNBC,2024-01-08T09:30:00Z
+2024-01-08,META,META beats expectations amid strong demand,Bloomberg,2024-01-08T09:30:00Z
+2024-01-09,AAPL,AAPL reports record quarterly revenue,CNBC,2024-01-09T09:30:00Z
+2024-01-09,MSFT,MSFT faces regulatory scrutiny,Bloomberg,2024-01-09T09:30:00Z
+2024-01-10,GOOG,GOOG announces share buyback,CNBC,2024-01-10T09:30:00Z
+2024-01-10,NVDA,NVDA misses guidance as costs rise,Reuters,2024-01-10T09:30:00Z
+2024-01-11,GOOG,GOOG reports record quarterly revenue,Reuters,2024-01-11T09:30:00Z
+2024-01-11,AMZN,AMZN unveils new product lineup,CNBC,2024-01-11T09:30:00Z
+2024-01-11,NVDA,NVDA faces regulatory scrutiny,Reuters,2024-01-11T09:30:00Z
+2024-01-12,NVDA,Market remains cautious on NVDA,Reuters,2024-01-12T09:30:00Z
+2024-01-15,GOOG,GOOG reports record quarterly revenue,Reuters,2024-01-15T09:30:00Z
+2024-01-17,GOOG,GOOG faces regulatory scrutiny,CNBC,2024-01-17T09:30:00Z
+2024-01-17,NVDA,NVDA announces share buyback,Reuters,2024-01-17T09:30:00Z
+2024-01-18,MSFT,MSFT beats expectations amid strong demand,Bloomberg,2024-01-18T09:30:00Z
+2024-01-18,GOOG,GOOG faces regulatory scrutiny,Reuters,2024-01-18T09:30:00Z
+2024-01-18,META,META announces share buyback,Reuters,2024-01-18T09:30:00Z
+2024-01-19,GOOG,GOOG reports record quarterly revenue,CNBC,2024-01-19T09:30:00Z
+2024-01-19,AMZN,Market remains cautious on AMZN,CNBC,2024-01-19T09:30:00Z
+2024-01-22,MSFT,Analysts turn optimistic on MSFT,CNBC,2024-01-22T09:30:00Z
+2024-01-22,NVDA,NVDA unveils new product lineup,Bloomberg,2024-01-22T09:30:00Z
+2024-01-23,AMZN,AMZN faces regulatory scrutiny,Reuters,2024-01-23T09:30:00Z
+2024-01-24,AAPL,Analysts turn optimistic on AAPL,Bloomberg,2024-01-24T09:30:00Z
+2024-01-24,AMZN,Analysts turn optimistic on AMZN,WSJ,2024-01-24T09:30:00Z
+2024-01-24,META,META reports record quarterly revenue,CNBC,2024-01-24T09:30:00Z
+2024-01-25,AAPL,AAPL announces share buyback,CNBC,2024-01-25T09:30:00Z
+2024-01-25,GOOG,GOOG beats expectations amid strong demand,Bloomberg,2024-01-25T09:30:00Z
+2024-01-25,META,META beats expectations amid strong demand,CNBC,2024-01-25T09:30:00Z
+2024-01-26,AMZN,AMZN reports record quarterly revenue,CNBC,2024-01-26T09:30:00Z
+2024-01-26,NVDA,NVDA misses guidance as costs rise,Bloomberg,2024-01-26T09:30:00Z
+2024-01-29,AAPL,AAPL unveils new product lineup,Bloomberg,2024-01-29T09:30:00Z
+2024-01-29,MSFT,Market remains cautious on MSFT,WSJ,2024-01-29T09:30:00Z
+2024-01-30,AAPL,Market remains cautious on AAPL,Bloomberg,2024-01-30T09:30:00Z
+2024-01-30,META,META faces regulatory scrutiny,Bloomberg,2024-01-30T09:30:00Z
+2024-01-31,MSFT,MSFT announces share buyback,CNBC,2024-01-31T09:30:00Z
+2024-01-31,GOOG,GOOG reports record quarterly revenue,WSJ,2024-01-31T09:30:00Z
+2024-01-31,NVDA,NVDA unveils new product lineup,Bloomberg,2024-01-31T09:30:00Z
+2024-02-01,MSFT,Analysts turn optimistic on MSFT,WSJ,2024-02-01T09:30:00Z
+2024-02-02,MSFT,MSFT misses guidance as costs rise,Reuters,2024-02-02T09:30:00Z
+2024-02-02,NVDA,NVDA misses guidance as costs rise,Bloomberg,2024-02-02T09:30:00Z
+2024-02-05,AAPL,Analysts turn optimistic on AAPL,WSJ,2024-02-05T09:30:00Z
+2024-02-05,MSFT,MSFT misses guidance as costs rise,WSJ,2024-02-05T09:30:00Z
+2024-02-06,MSFT,MSFT reports record quarterly revenue,WSJ,2024-02-06T09:30:00Z
+2024-02-07,GOOG,GOOG faces regulatory scrutiny,Reuters,2024-02-07T09:30:00Z
+2024-02-07,AMZN,AMZN misses guidance as costs rise,CNBC,2024-02-07T09:30:00Z
+2024-02-08,GOOG,GOOG unveils new product lineup,Reuters,2024-02-08T09:30:00Z
+2024-02-08,AMZN,AMZN faces regulatory scrutiny,WSJ,2024-02-08T09:30:00Z
+2024-02-09,AAPL,Analysts turn optimistic on AAPL,WSJ,2024-02-09T09:30:00Z
+2024-02-09,GOOG,GOOG beats expectations amid strong demand,CNBC,2024-02-09T09:30:00Z
+2024-02-09,META,Analysts turn optimistic on META,Reuters,2024-02-09T09:30:00Z
+2024-02-12,AAPL,AAPL faces regulatory scrutiny,Bloomberg,2024-02-12T09:30:00Z
+2024-02-12,GOOG,Analysts turn optimistic on GOOG,CNBC,2024-02-12T09:30:00Z
+2024-02-12,AMZN,Analysts turn optimistic on AMZN,Reuters,2024-02-12T09:30:00Z
+2024-02-13,MSFT,MSFT unveils new product lineup,WSJ,2024-02-13T09:30:00Z
+2024-02-13,NVDA,NVDA beats expectations amid strong demand,Reuters,2024-02-13T09:30:00Z
+2024-02-14,MSFT,MSFT unveils new product lineup,CNBC,2024-02-14T09:30:00Z
+2024-02-14,GOOG,GOOG announces share buyback,Reuters,2024-02-14T09:30:00Z
+2024-02-14,META,META announces share buyback,Reuters,2024-02-14T09:30:00Z
+2024-02-15,AMZN,AMZN misses guidance as costs rise,WSJ,2024-02-15T09:30:00Z
+2024-02-15,META,META misses guidance as costs rise,Bloomberg,2024-02-15T09:30:00Z
+2024-02-16,AAPL,Analysts turn optimistic on AAPL,WSJ,2024-02-16T09:30:00Z
+2024-02-16,GOOG,Analysts turn optimistic on GOOG,CNBC,2024-02-16T09:30:00Z
+2024-02-16,AMZN,AMZN reports record quarterly revenue,Bloomberg,2024-02-16T09:30:00Z
+2024-02-16,NVDA,NVDA announces share buyback,CNBC,2024-02-16T09:30:00Z
+2024-02-19,AMZN,AMZN reports record quarterly revenue,CNBC,2024-02-19T09:30:00Z
+2024-02-19,META,Market remains cautious on META,WSJ,2024-02-19T09:30:00Z
+2024-02-19,NVDA,NVDA misses guidance as costs rise,Bloomberg,2024-02-19T09:30:00Z
+2024-02-20,GOOG,GOOG announces share buyback,Reuters,2024-02-20T09:30:00Z
+2024-02-20,META,META unveils new product lineup,Reuters,2024-02-20T09:30:00Z
+2024-02-21,META,META announces share buyback,Bloomberg,2024-02-21T09:30:00Z
+2024-02-22,AAPL,AAPL beats expectations amid strong demand,Reuters,2024-02-22T09:30:00Z
+2024-02-23,GOOG,GOOG beats expectations amid strong demand,Bloomberg,2024-02-23T09:30:00Z
+2024-02-23,AMZN,AMZN misses guidance as costs rise,Reuters,2024-02-23T09:30:00Z
+2024-02-23,META,META unveils new product lineup,Reuters,2024-02-23T09:30:00Z
+2024-02-23,NVDA,NVDA announces share buyback,CNBC,2024-02-23T09:30:00Z
+2024-02-26,MSFT,Market remains cautious on MSFT,Bloomberg,2024-02-26T09:30:00Z
+2024-02-26,AMZN,Analysts turn optimistic on AMZN,WSJ,2024-02-26T09:30:00Z
+2024-02-26,META,META announces share buyback,WSJ,2024-02-26T09:30:00Z
+2024-02-27,META,META reports record quarterly revenue,Bloomberg,2024-02-27T09:30:00Z
+2024-02-28,GOOG,GOOG misses guidance as costs rise,Reuters,2024-02-28T09:30:00Z
+2024-02-28,META,META reports record quarterly revenue,CNBC,2024-02-28T09:30:00Z
+2024-02-28,NVDA,NVDA reports record quarterly revenue,WSJ,2024-02-28T09:30:00Z
+2024-02-29,AAPL,Market remains cautious on AAPL,Reuters,2024-02-29T09:30:00Z
+2024-03-01,AAPL,AAPL misses guidance as costs rise,Reuters,2024-03-01T09:30:00Z
+2024-03-01,AMZN,AMZN reports record quarterly revenue,CNBC,2024-03-01T09:30:00Z
+2024-03-05,AAPL,AAPL misses guidance as costs rise,Bloomberg,2024-03-05T09:30:00Z
+2024-03-05,AMZN,AMZN announces share buyback,Bloomberg,2024-03-05T09:30:00Z
+2024-03-06,MSFT,Market remains cautious on MSFT,Bloomberg,2024-03-06T09:30:00Z
+2024-03-06,META,META reports record quarterly revenue,Bloomberg,2024-03-06T09:30:00Z
+2024-03-06,NVDA,NVDA faces regulatory scrutiny,WSJ,2024-03-06T09:30:00Z
+2024-03-07,MSFT,MSFT announces share buyback,Reuters,2024-03-07T09:30:00Z
+2024-03-07,META,Market remains cautious on META,Reuters,2024-03-07T09:30:00Z
+2024-03-08,META,META beats expectations amid strong demand,Reuters,2024-03-08T09:30:00Z
+2024-03-11,MSFT,MSFT misses guidance as costs rise,Bloomberg,2024-03-11T09:30:00Z
+2024-03-11,AMZN,Analysts turn optimistic on AMZN,WSJ,2024-03-11T09:30:00Z
+2024-03-11,NVDA,Market remains cautious on NVDA,WSJ,2024-03-11T09:30:00Z
+2024-03-12,GOOG,GOOG announces share buyback,WSJ,2024-03-12T09:30:00Z
+2024-03-12,AMZN,AMZN beats expectations amid strong demand,Bloomberg,2024-03-12T09:30:00Z
+2024-03-12,META,META reports record quarterly revenue,Reuters,2024-03-12T09:30:00Z
+2024-03-13,AAPL,AAPL reports record quarterly revenue,CNBC,2024-03-13T09:30:00Z
+2024-03-13,AMZN,Market remains cautious on AMZN,CNBC,2024-03-13T09:30:00Z
+2024-03-14,AAPL,AAPL reports record quarterly revenue,WSJ,2024-03-14T09:30:00Z
+2024-03-14,MSFT,Analysts turn optimistic on MSFT,Bloomberg,2024-03-14T09:30:00Z
+2024-03-14,GOOG,GOOG faces regulatory scrutiny,Bloomberg,2024-03-14T09:30:00Z
+2024-03-15,META,META beats expectations amid strong demand,Reuters,2024-03-15T09:30:00Z
+2024-03-15,NVDA,NVDA unveils new product lineup,Reuters,2024-03-15T09:30:00Z
+2024-03-18,AAPL,AAPL beats expectations amid strong demand,WSJ,2024-03-18T09:30:00Z
+2024-03-18,MSFT,Analysts turn optimistic on MSFT,Reuters,2024-03-18T09:30:00Z
+2024-03-18,META,META misses guidance as costs rise,Bloomberg,2024-03-18T09:30:00Z
+2024-03-18,NVDA,NVDA misses guidance as costs rise,Reuters,2024-03-18T09:30:00Z
+2024-03-19,GOOG,GOOG announces share buyback,WSJ,2024-03-19T09:30:00Z
+2024-03-19,META,META misses guidance as costs rise,Bloomberg,2024-03-19T09:30:00Z
+2024-03-19,NVDA,NVDA beats expectations amid strong demand,Reuters,2024-03-19T09:30:00Z
+2024-03-20,GOOG,GOOG reports record quarterly revenue,CNBC,2024-03-20T09:30:00Z
+2024-03-21,META,META faces regulatory scrutiny,Bloomberg,2024-03-21T09:30:00Z
+2024-03-21,NVDA,NVDA unveils new product lineup,Bloomberg,2024-03-21T09:30:00Z
+2024-03-22,AAPL,AAPL faces regulatory scrutiny,WSJ,2024-03-22T09:30:00Z
+2024-03-22,GOOG,Analysts turn optimistic on GOOG,CNBC,2024-03-22T09:30:00Z
+2024-03-22,NVDA,Market remains cautious on NVDA,CNBC,2024-03-22T09:30:00Z
+2024-03-25,AMZN,AMZN misses guidance as costs rise,Reuters,2024-03-25T09:30:00Z
+2024-03-27,AAPL,Market remains cautious on AAPL,Reuters,2024-03-27T09:30:00Z
+2024-03-27,META,META misses guidance as costs rise,Bloomberg,2024-03-27T09:30:00Z
+2024-03-28,GOOG,GOOG faces regulatory scrutiny,Bloomberg,2024-03-28T09:30:00Z
+2024-03-28,NVDA,NVDA unveils new product lineup,Reuters,2024-03-28T09:30:00Z
+2024-04-01,GOOG,GOOG announces share buyback,CNBC,2024-04-01T09:30:00Z
+2024-04-02,AMZN,AMZN faces regulatory scrutiny,Bloomberg,2024-04-02T09:30:00Z
+2024-04-02,NVDA,Market remains cautious on NVDA,CNBC,2024-04-02T09:30:00Z
+2024-04-03,AAPL,AAPL beats expectations amid strong demand,CNBC,2024-04-03T09:30:00Z
+2024-04-04,AAPL,AAPL misses guidance as costs rise,Bloomberg,2024-04-04T09:30:00Z
+2024-04-04,GOOG,GOOG faces regulatory scrutiny,Reuters,2024-04-04T09:30:00Z
+2024-04-04,AMZN,AMZN misses guidance as costs rise,Bloomberg,2024-04-04T09:30:00Z
+2024-04-08,AAPL,AAPL faces regulatory scrutiny,CNBC,2024-04-08T09:30:00Z
+2024-04-08,MSFT,MSFT announces share buyback,CNBC,2024-04-08T09:30:00Z

@@ -10,10 +10,9 @@ import pandas as pd
 from dotenv import load_dotenv
 
 try:
-    # Imported for future use; no network calls are made here.
     from alpaca.data.historical import NewsClient  # type: ignore
     from alpaca.data.requests import NewsRequest  # type: ignore
-except Exception:  # pragma: no cover - keep CLI usable even if API moves
+except Exception:  # pragma: no cover
     NewsClient = None  # type: ignore
     NewsRequest = None  # type: ignore
 
@@ -59,7 +58,7 @@ def write_empty_output() -> None:
 
 
 def maybe_create_client() -> Optional[object]:
-    """Instantiate Alpaca news client if available and keys are set. No calls."""
+    """Instantiate Alpaca news client if available and keys are set."""
 
     api_key = os.getenv("APCA_API_KEY_ID")
     api_secret = os.getenv("APCA_API_SECRET_KEY")
@@ -71,15 +70,83 @@ def maybe_create_client() -> Optional[object]:
         return None
 
 
+def fetch_news_dataframe(
+    client: object,
+    symbols: list[str],
+    start: str,
+    end: str,
+    limit: int,
+) -> pd.DataFrame:
+    """Fetch news with pagination and normalize to headlines schema.
+
+    Endpoint: /v1beta1/news via alpaca-py NewsClient.get_news
+    """
+
+    if NewsRequest is None:
+        return pd.DataFrame()
+
+    rows = []
+    page_token = None
+    while True:
+        req = NewsRequest(
+            symbols=symbols,
+            start=start,
+            end=end,
+            limit=limit,
+            page_token=page_token,
+        )
+        resp = client.get_news(req)
+        items = getattr(resp, "news", [])
+        for item in items:
+            # item may be a pydantic model; use getattr defensively
+            headline = getattr(item, "headline", "")
+            syms = getattr(item, "symbols", []) or []
+            created_at = getattr(item, "created_at", None)
+            source = getattr(item, "source", "")
+            for sym in syms:
+                rows.append(
+                    {
+                        "date": pd.to_datetime(created_at).date() if created_at else None,
+                        "symbol": sym,
+                        "headline": headline,
+                        "source": source,
+                        "created_at": pd.to_datetime(created_at) if created_at else None,
+                    }
+                )
+        page_token = getattr(resp, "next_page_token", None)
+        if not page_token:
+            break
+        sleep(0.05)
+
+    df = pd.DataFrame.from_records(
+        rows, columns=["date", "symbol", "headline", "source", "created_at"]
+    )
+    return df
+
+
 def main() -> None:
     load_dotenv()
-    _ = parse_args()
+    args = parse_args()
     ensure_dirs()
 
-    # Placeholder: structure only, no network calls yet.
-    _client = maybe_create_client()
+    client = maybe_create_client()
+    symbols = [s.strip() for s in args.symbols.split(",") if s.strip()]
 
-    write_empty_output()
+    if client is None:
+        write_empty_output()
+        return
+
+    df = fetch_news_dataframe(
+        client,
+        symbols=symbols,
+        start=args.start,
+        end=args.end,
+        limit=args.limit,
+    )
+    if df.empty:
+        write_empty_output()
+        return
+    df.to_csv("data/raw/headlines.csv", index=False)
 
 
 if __name__ == "__main__":

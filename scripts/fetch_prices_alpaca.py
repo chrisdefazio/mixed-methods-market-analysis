@@ -10,12 +10,14 @@ import pandas as pd
 from dotenv import load_dotenv
 
 try:
-    # Imported for future use; no network calls are made here.
+    # alpaca-py v0.19 API
     from alpaca.data.historical import StockHistoricalDataClient  # type: ignore
     from alpaca.data.requests import StockBarsRequest  # type: ignore
-except Exception:  # pragma: no cover - keep CLI usable even if API moves
+    from alpaca.data.timeframe import TimeFrame  # type: ignore
+except Exception:  # pragma: no cover - tolerate import issues in non-network envs
     StockHistoricalDataClient = None  # type: ignore
     StockBarsRequest = None  # type: ignore
+    TimeFrame = None  # type: ignore
 
 
 def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable:
@@ -67,8 +69,32 @@ def write_empty_outputs() -> None:
     pd.DataFrame(columns=returns_cols).to_csv("data/raw/returns.csv", index=False)
 
 
+def compute_volatility_and_returns(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Compute rolling volatility (20-day, annualized) and simple returns.
+
+    Args:
+        df: Bars with columns [date, ticker, close, volume].
+
+    Returns:
+        Tuple of (prices_with_volatility, returns).
+    """
+
+    out = df.sort_values(["ticker", "date"]).copy()
+    # daily simple returns for returns.csv
+    out["return"] = out.groupby("ticker")["close"].pct_change()
+
+    # rolling 20d std of returns, annualized
+    rolling = out.groupby("ticker")["return"].rolling(20).std().reset_index(level=0, drop=True)
+    vol = rolling * (252.0**0.5)
+    out["volatility"] = vol.bfill().fillna(0.0)
+
+    prices = out[["date", "ticker", "sector", "close", "volume", "volatility"]].copy()
+    returns = out[["date", "ticker", "return"]].dropna().copy()
+    return prices, returns
+
+
 def maybe_create_client() -> Optional[object]:
-    """Instantiate Alpaca client if available and keys are set. No network calls."""
+    """Instantiate Alpaca client if available and keys are set."""
 
     api_key = os.getenv("APCA_API_KEY_ID")
     api_secret = os.getenv("APCA_API_SECRET_KEY")
@@ -80,20 +106,91 @@ def maybe_create_client() -> Optional[object]:
         return None
 
 
+def fetch_bars_dataframe(
+    client: object,
+    symbols: list[str],
+    start: str,
+    end: str,
+    timeframe: str,
+    adjustment: str,
+    feed: str,
+) -> pd.DataFrame:
+    """Fetch daily bars and return a flattened DataFrame for specified symbols.
+
+    Uses alpaca-py `get_stock_bars` and consolidates multi-index to tidy rows.
+    """
+
+    if StockBarsRequest is None or TimeFrame is None:
+        return pd.DataFrame()
+
+    tf = TimeFrame.Day if timeframe.lower() in {"1d", "1day", "day"} else TimeFrame.Day
+    req = StockBarsRequest(
+        symbol_or_symbols=symbols,
+        timeframe=tf,
+        start=start,
+        end=end,
+        adjustment=adjustment,
+        feed=feed,
+        limit=10000,
+    )
+    resp = client.get_stock_bars(req)
+    # resp.df is a MultiIndex (symbol, timestamp) DataFrame with ohlcv columns
+    if not hasattr(resp, "df"):
+        return pd.DataFrame()
+
+    df = resp.df.reset_index()
+    # Normalize columns: symbol -> ticker, timestamp -> date
+    df = df.rename(columns={"symbol": "ticker", "timestamp": "date"})
+    # Ensure close/volume columns exist whether API provided shorthand or long names
+    if "c" in df.columns and "close" not in df.columns:
+        df = df.rename(columns={"c": "close"})
+    if "v" in df.columns and "volume" not in df.columns:
+        df = df.rename(columns={"v": "volume"})
+    # Only keep required fields if present
+    keep = ["date", "ticker", "close", "volume"]
+    df = df[[c for c in keep if c in df.columns]]
+    # Add sector fallback
+    df["sector"] = "Unknown"
+    # Convert date to date (without time)
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"]).dt.date
+    return df
+
+
 def main() -> None:
     load_dotenv()
     args = parse_args()
     ensure_dirs()
 
-    # Placeholder: structure only, no network calls yet.
-    _client = maybe_create_client()
-
-    # Honor env for feed/adjustment even before implementation
+    client = maybe_create_client()
     data_feed = os.getenv("APCA_DATA_FEED", "sip")
     adjustment = os.getenv("APCA_ADJUSTMENT", "all")
-    _ = (args, data_feed, adjustment)
 
-    write_empty_outputs()
+    symbols = [s.strip() for s in args.symbols.split(",") if s.strip()]
+
+    if client is None:
+        # No keys or client; write headers only
+        write_empty_outputs()
+        return
+
+    # Fetch bars and compute outputs
+    bars_df = fetch_bars_dataframe(
+        client,
+        symbols=symbols,
+        start=args.start,
+        end=args.end,
+        timeframe=args.timeframe,
+        adjustment=adjustment,
+        feed=data_feed,
+    )
+
+    if bars_df.empty:
+        write_empty_outputs()
+        return
+
+    prices_df, returns_df = compute_volatility_and_returns(bars_df)
+    prices_df.to_csv("data/raw/prices.csv", index=False)
+    returns_df.to_csv("data/raw/returns.csv", index=False)
 
 
 if __name__ == "__main__":
