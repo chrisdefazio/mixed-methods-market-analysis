@@ -2,7 +2,7 @@
 
 ### Context
 
-I analyzed a compact, recent market window for a small basket of tickers, combining daily prices/activity with company headline sentiment. When live APIs are unavailable, the workflow uses a realistic synthetic sample so everything still runs end‑to‑end.
+I analyzed a short, recent market window for a small basket of tickers, combining daily prices/activity with company headline sentiment. When live APIs are unavailable, the workflow uses a realistic synthetic sample so everything still runs end‑to‑end even if API data is not available.
 
 ### Methods
 
@@ -37,17 +37,17 @@ Not much here of useful statistical significance but it's a good starting point 
 
 ### Limitations
 
-- Very sample window
-- Headline sentiment is dictionary‑base
+- Very small sample window
+- Headline sentiment is dictionary‑based
 - Small number of tickers, topics, sectors, and headlines
 - Sector labels are broad
-- Synthetic data is not real market data
+- Synthetic data is not real market data (obviously)
 - Etc...
 
 ### Next steps
 
 - Extend the window and re‑check ANOVA/OLS; add market factors (e.g., index returns) as controls.
-- Try modestly richer text, few more topics; try a more sophisticated sentiment analysis method.
+- Try richer text, few more topics, and try a more sophisticated sentiment analysis method.
 - Hold out a period to confirm whether patterns persist out‑of‑sample.
 
 ### Appendix: key numbers pulled from the analysis notebooks
