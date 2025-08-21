@@ -19,7 +19,7 @@ See the complete analysis results and key findings: [reports/final_report.md](re
 6. Run notebooks: `make run-all` (placeholder for now; will execute notebooks in order).
 
 ### Alpaca Setup
-[Alpaca docs](https://alpaca.markets/docs/api-documentation/api-v2/market-data/stocks/historical-prices/)
+[Alpaca docs](https://docs.alpaca.markets/docs/about-market-data-api)
 
 Set the following environment variables (e.g., in `.env`):
 
