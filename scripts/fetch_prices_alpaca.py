@@ -141,7 +141,7 @@ def fetch_bars_dataframe(
     df = resp.df.reset_index()
     # Normalize columns: symbol -> ticker, timestamp -> date
     df = df.rename(columns={"symbol": "ticker", "timestamp": "date"})
-    # Ensure close/volume columns exist whether API provided shorthand or long names
+    # make sure close/volume columns exist whether API provided shorthand or long names
     if "c" in df.columns and "close" not in df.columns:
         df = df.rename(columns={"c": "close"})
     if "v" in df.columns and "volume" not in df.columns:

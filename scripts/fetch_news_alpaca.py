@@ -26,7 +26,7 @@ def retry(max_tries: int = 3, backoff_seconds: float = 1.0) -> Callable:
             while True:
                 try:
                     return fn(*args, **kwargs)
-                except Exception:  # noqa: BLE001 - CLI placeholder
+                except Exception:
                     tries += 1
                     if tries >= max_tries:
                         raise
@@ -98,7 +98,7 @@ def fetch_news_dataframe(
         resp = client.get_news(req)
         items = getattr(resp, "news", [])
         for item in items:
-            # item may be a pydantic model; use getattr defensively
+            # item may be a pydantic model
             headline = getattr(item, "headline", "")
             syms = getattr(item, "symbols", []) or []
             created_at = getattr(item, "created_at", None)

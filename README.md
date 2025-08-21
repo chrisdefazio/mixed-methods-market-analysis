@@ -1,8 +1,9 @@
 # Mixed‑Methods Market Analysis
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+**📊 [Executive Summary](reports/final_report.md)** — See the complete analysis results and key findings.
 
-Purpose: A research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling, simple hand-coding rubric) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks.
+
+Purpose: A research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks. Really just a demo for learning purposes. Not useful for trading in it's current state.
 
 ## Quickstart
 
