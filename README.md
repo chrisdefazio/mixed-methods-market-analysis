@@ -1,6 +1,6 @@
 # Mixed‑Methods Market Analysis
 
-I analyzed a research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks. Really just a demo for learning purposes. Not useful for trading in it's current state.
+A simple research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks. Really just a demo for learning purposes. Not useful for trading in it's current state.
 
 ## Executive Summary
 
@@ -8,7 +8,7 @@ See the complete analysis results and key findings: [reports/final_report.md](re
 
 ## Technical Guide
 
-### Quickstart
+### Quickstart - How to run the project yourself
 
 1. Python 3.10+.
 2. Create and activate a virtual environment, then install:
