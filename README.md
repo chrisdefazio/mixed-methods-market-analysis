@@ -1,11 +1,14 @@
 # Mixed‑Methods Market Analysis
 
-**📊 [Executive Summary](reports/final_report.md)** — See the complete analysis results and key findings.
+I analyzed a research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks. Really just a demo for learning purposes. Not useful for trading in it's current state.
 
+## Executive Summary
 
-Purpose: A research portfolio project that integrates quantitative (descriptives, ANOVA, OLS regression, PCA) and qualitative (term frequencies, NMF topic modeling) methods on market data and news, with a mixed‑methods synthesis and reproducible numbered notebooks. Really just a demo for learning purposes. Not useful for trading in it's current state.
+See the complete analysis results and key findings: [reports/final_report.md](reports/final_report.md)
 
-## Quickstart
+## Technical Guide
+
+### Quickstart
 
 1. Python 3.10+.
 2. Create and activate a virtual environment, then install:
@@ -15,7 +18,7 @@ Purpose: A research portfolio project that integrates quantitative (descriptives
 5. Data sample: `make fetch-sample` (placeholder for now; will fetch from Alpaca if keys are present, otherwise generate synthetic data).
 6. Run notebooks: `make run-all` (placeholder for now; will execute notebooks in order).
 
-## Alpaca Setup
+### Alpaca Setup
 [Alpaca docs](https://alpaca.markets/docs/api-documentation/api-v2/market-data/stocks/historical-prices/)
 
 Set the following environment variables (e.g., in `.env`):
@@ -30,26 +33,26 @@ APCA_ADJUSTMENT=all
 
 The project will use `alpaca-py` to retrieve market OHLCV, sectors, and news.
 
-## Data Schema
+### Data Schema
 
 - prices.csv: `date`, `ticker`, `sector`, `close`, `volume`, `volatility`
 - returns.csv: `date`, `ticker`, `return`
 - headlines.csv: `date`, `symbol`, `headline`, `source?`, `created_at?`
 - merged.csv: merged dataset with `sentiment_score`
 
-## Notebook Order
+### Notebook Order
 
 1. `01_data_preparation.ipynb`
 2. `02_quantitative_analysis.ipynb`
 3. `03_qualitative_analysis.ipynb`
 4. `04_report_figures.ipynb`
 
-## Synthetic vs Alpaca Data
+### Synthetic vs Alpaca Data
 
 - If Alpaca keys are configured, data will be fetched from Alpaca endpoints.
 - Otherwise, the workflow will fall back to synthetic sample data that matches the schemas above.
 
-## Demo Walkthrough
+### Demo Walkthrough
 
 Commands to reproduce end-to-end (assuming Python 3.10+):
 
