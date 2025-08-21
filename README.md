@@ -16,6 +16,7 @@ Purpose: A research portfolio project that integrates quantitative (descriptives
 6. Run notebooks: `make run-all` (placeholder for now; will execute notebooks in order).
 
 ## Alpaca Setup
+[Alpaca docs](https://alpaca.markets/docs/api-documentation/api-v2/market-data/stocks/historical-prices/)
 
 Set the following environment variables (e.g., in `.env`):
 
@@ -65,5 +66,3 @@ Expected artifacts:
 - `data/processed/merged.csv`
 - `notebooks/*.html` (converted notebooks)
 - `reports/figures/*.png` (after running the figures notebook)
-
-Success note: Acceptance steps (`make install`, `make precommit`, `make fetch-sample`, `make run-all`, `make lint`, `pytest -q`) were verified on 2025-08-19 with Python 3.11.
